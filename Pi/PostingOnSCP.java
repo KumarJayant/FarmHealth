@@ -22,11 +22,12 @@ public class Temperature {
     // Add your account id here
     // Get the devide ID and the OAuth Token from the Device List in your
     // IoT Services Cockpit
-    public static String MY_ACCOUNT_ID  = "P1667685611trial";
-    public static String MESSAGETYPE_ID = "fd5d652539f40e51e450";
-    public static String DEVICE_1_ID    = "7c93e140-9703-40b6-bc4b-b639030ef631";
-    public static String DEVICE_1_TOKEN = "43c5b7eb66349b62b264a07dee652e79";
+    public static String MY_ACCOUNT_ID  = "P1941838709trial";//"P1667685611trial";
+    public static String MESSAGETYPE_ID = "d2d87e4e880fc87c8d69";// "fd5d652539f40e51e450";
+    public static String DEVICE_1_ID    = "58fb238c-cc8c-4587-b9d0-53dcb416c5c3";//"7c93e140-9703-40b6-bc4b-b639030ef631";
+    public static String DEVICE_1_TOKEN = "b5357b2f62f611e7245a3a99ac3e8e";//"43c5b7eb66349b62b264a07dee652e79";
  
+ // to be checked later
     public static String DEVICE_2_ID    = "e9687a15-3305-4d6e-9e65-c821dd390340";
     public static String DEVICE_2_TOKEN = "80289b5afa8823093182d2d245b6139";
  
@@ -55,9 +56,9 @@ public class Temperature {
             sensorTemperature = getRandomValue(-5, 0);
             //sensorTemperature = getOnboardTempSensor();
             //sensorTemperature = getOneWireSensor("28-0000060a4638");
-            bodyMessage = buildBody(MESSAGETYPE_ID, sensorTemperature, timestamp);
-			System.out.println(bodyMessage);
-            sendToCloud(bodyMessage, DEVICE_2_ID, DEVICE_2_TOKEN , String.valueOf(i + 1));
+            //bodyMessage = buildBody(MESSAGETYPE_ID, sensorTemperature, timestamp);
+			//System.out.println(bodyMessage);
+            //sendToCloud(bodyMessage, DEVICE_2_ID, DEVICE_2_TOKEN , String.valueOf(i + 1));
         }
     }
  
