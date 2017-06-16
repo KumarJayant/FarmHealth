@@ -14,7 +14,7 @@ import java.util.Random;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class PostingOnSCP {
+public class SimpleTest {
 
 	// Set this to true if you are working behind a proxy server.
 	// If you are working from home you should set this most probable to false
@@ -23,13 +23,13 @@ public class PostingOnSCP {
 	// Get the devide ID and the OAuth Token from the Device List in your
 	// IoT Services Cockpit
 	public static String MY_ACCOUNT_ID = "P1941838709trial";// "P1667685611trial";
-	public static String MESSAGETYPE_ID = "d2d87e4e880fc87c8d69";// "fd5d652539f40e51e450";
-	public static String DEVICE_1_ID = "58fb238c-cc8c-4587-b9d0-53dcb416c5c3";// "7c93e140-9703-40b6-bc4b-b639030ef631";
-	public static String DEVICE_1_TOKEN = "b5357b2f62f611e7245a3a99ac3e8e";// "43c5b7eb66349b62b264a07dee652e79";
+	public static String MESSAGETYPE_ID = "81e86a37b3f461c44ae4";// "fd5d652539f40e51e450";
+	public static String DEVICE_1_ID = "2718a78a-37b6-49dc-803a-f02c7f49582e";// "7c93e140-9703-40b6-bc4b-b639030ef631";
+	public static String DEVICE_1_TOKEN = "d4d7ce4ee694fe96888fb71b245c7f7";// "43c5b7eb66349b62b264a07dee652e79";
 
 	// to be checked later
-	public static String DEVICE_2_ID = "e9687a15-3305-4d6e-9e65-c821dd390340";
-	public static String DEVICE_2_TOKEN = "80289b5afa8823093182d2d245b6139";
+	//public static String DEVICE_2_ID = "e9687a15-3305-4d6e-9e65-c821dd390340";
+	//public static String DEVICE_2_TOKEN = "80289b5afa8823093182d2d245b6139";
 
 	public static void main(String args[]) {
 		String repeatString = null;
@@ -53,7 +53,7 @@ public class PostingOnSCP {
 			double sensorTemperature = getRandomValue(-5, 5);
 			String bodyMessage = buildBody(MESSAGETYPE_ID, sensorTemperature, timestamp);
 			sendToCloud(bodyMessage, DEVICE_1_ID, DEVICE_1_TOKEN, String.valueOf(i + 1));
-			sensorTemperature = getRandomValue(-5, 0);
+			//sensorTemperature = getRandomValue(-5, 0);
 			// sensorTemperature = getOnboardTempSensor();
 			// sensorTemperature = getOneWireSensor("28-0000060a4638");
 			// bodyMessage = buildBody(MESSAGETYPE_ID, sensorTemperature,
@@ -90,11 +90,7 @@ public class PostingOnSCP {
 		// nutrient
 
 		String messageContent = "{";
-		messageContent += buildJson("timestamp", 1413191650) + ",";
-		messageContent += buildJson("humidity", sensorValue) + ",";
-		messageContent += buildJson("temperature", sensorValue) + ",";
-		messageContent += buildJson("sunlight", sensorValue) + ",";
-		messageContent += buildJson("nutrient", time);
+		messageContent += buildJson("value", 33);
 		messageContent += "}";
 
 		body += messageContent;
